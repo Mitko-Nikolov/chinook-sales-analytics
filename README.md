@@ -21,7 +21,7 @@ A Power BI project analyzing revenue performance, genre trends, and customer spe
 ---
 
 ## 🛠️ Tech Stack
-* **Power BI** (Data Modeling, DAX, Dashboard Design)
+* **Power BI** (Data Modeling, Dashboard Design)
 * **SQL / SQLite** (Data Extraction & Aggregation)
 
 ---
