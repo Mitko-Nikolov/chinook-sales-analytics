@@ -1,0 +1,11 @@
+SELECT 
+    c.CustomerId,
+    c.FirstName || ' ' || c.LastName AS CustomerName,
+    c.Country,
+    c.City,
+    COUNT(i.InvoiceId) AS TotalInvoices,
+    ROUND(SUM(i.Total), 2) AS TotalSpent
+FROM Customer c
+JOIN Invoice i ON c.CustomerId = i.CustomerId
+GROUP BY c.CustomerId
+ORDER BY TotalSpent DESC;

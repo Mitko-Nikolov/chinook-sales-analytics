@@ -1,0 +1,10 @@
+SELECT 
+    g.Name AS Genre,
+    COUNT(DISTINCT il.InvoiceId) AS TotalOrders,
+    SUM(il.Quantity) AS TracksSold,
+    ROUND(SUM(il.UnitPrice * il.Quantity), 2) AS TotalRevenue
+FROM InvoiceLine il
+JOIN Track t ON il.TrackId = t.TrackId
+JOIN Genre g ON t.GenreId = g.GenreId
+GROUP BY g.Name
+ORDER BY TotalRevenue DESC;
